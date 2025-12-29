@@ -1,0 +1,39 @@
+{
+  "name": "miniprogram",
+  "version": "1.0.0",
+  "private": true,
+  "description": "微信小程序 - Taro + React + TypeScript",
+  "scripts": {
+    "dev:weapp": "npm run build:weapp -- --watch",
+    "build:weapp": "taro build --type weapp",
+    "dev:h5": "npm run build:h5 -- --watch",
+    "build:h5": "taro build --type h5",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "@tarojs/components": "^3.6.0",
+    "@tarojs/plugin-framework-react": "^3.6.0",
+    "@tarojs/plugin-platform-weapp": "^3.6.0",
+    "@tarojs/react": "^3.6.0",
+    "@tarojs/runtime": "^3.6.0",
+    "@tarojs/taro": "^3.6.0",
+    "marked": "^17.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@tarojs/cli": "^3.6.0",
+    "@tarojs/webpack5-runner": "^3.6.0",
+    "@types/node": "^25.0.3",
+    "@types/react": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "babel-preset-taro": "^3.6.0",
+    "eslint": "^8.0.0",
+    "eslint-config-taro": "^3.6.0",
+    "eslint-plugin-react": "^7.0.0",
+    "typescript": "^5.0.0",
+    "webpack": "^5.0.0"
+  }
+}

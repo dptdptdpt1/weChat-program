@@ -1,0 +1,227 @@
+.event-detail {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+
+  // 加载状态
+  &__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  &__loading-text {
+    font-size: 28px;
+    color: #999;
+  }
+
+  // 错误状态
+  &__error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px;
+  }
+
+  &__error-icon {
+    font-size: 120px;
+    margin-bottom: 24px;
+  }
+
+  &__error-text {
+    font-size: 32px;
+    color: #999;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  &__error-btn {
+    padding: 16px 48px;
+    background-color: #1890ff;
+    color: #fff;
+    border-radius: 48px;
+    font-size: 28px;
+    transition: all 0.2s ease;
+
+    &:active {
+      background-color: #0070e0;
+      transform: scale(0.95);
+    }
+  }
+
+  // 内容区域
+  &__content {
+    padding-bottom: 40px;
+  }
+
+  // 图片区域
+  &__image-wrapper {
+    position: relative;
+    width: 100%;
+    background-color: #000;
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+  }
+
+  &__image-tip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  // 赛事信息
+  &__info {
+    background-color: #fff;
+    padding: 32px;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-size: 40px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  &__meta-item {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    color: #666;
+  }
+
+  &__meta-icon {
+    margin-right: 8px;
+    font-size: 32px;
+  }
+
+  // 赛事内容
+  &__body {
+    background-color: #fff;
+    padding: 32px;
+    margin-bottom: 24px;
+    line-height: 1.8;
+    font-size: 30px;
+    color: #333;
+
+    // 富文本样式
+    :global {
+      p {
+        margin-bottom: 24px;
+        text-indent: 2em;
+      }
+
+      strong {
+        font-weight: 600;
+        color: #1890ff;
+      }
+
+      ul, ol {
+        padding-left: 48px;
+        margin-bottom: 24px;
+      }
+
+      li {
+        margin-bottom: 12px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 24px 0;
+        border-radius: 8px;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: 600;
+        margin: 32px 0 16px;
+        color: #333;
+      }
+
+      h1 { font-size: 40px; }
+      h2 { font-size: 36px; }
+      h3 { font-size: 32px; }
+    }
+  }
+
+  // 客服信息
+  &__customer-service {
+    background-color: #fff;
+    margin: 0 32px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  &__cs-header {
+    padding: 32px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  &__cs-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  &__cs-content {
+    padding: 32px;
+  }
+
+  &__cs-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 28px;
+  }
+
+  &__cs-label {
+    color: #999;
+    margin-right: 16px;
+  }
+
+  &__cs-value {
+    color: #1890ff;
+    font-weight: 600;
+  }
+
+  &__cs-qrcode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 32px;
+  }
+
+  &__cs-image {
+    width: 400px;
+    height: 400px;
+    background-color: #f5f5f5;
+    border-radius: 16px;
+  }
+
+  &__cs-tip {
+    margin-top: 16px;
+    font-size: 24px;
+    color: #999;
+  }
+}
+
