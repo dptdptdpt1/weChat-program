@@ -31,10 +31,10 @@ pip install -r requirements.txt
 
 ### 2. 配置环境变量
 
-复制 `.env.example` 为 `.env` 并根据需要修改配置:
+复制 `.env.local` 为 `.env` 并根据需要修改配置:
 
 ```bash
-copy .env.example .env
+copy .env.local .env
 ```
 
 ### 3. 启动服务器
@@ -100,7 +100,7 @@ api/
 │       └── error_handlers.py # 错误处理器
 ├── main.py              # 应用入口
 ├── requirements.txt     # 依赖列表
-└── .env.example         # 环境变量示例
+└── .env.local         # 环境变量示例
 ```
 
 ## 数据库
