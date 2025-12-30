@@ -1,6 +1,8 @@
 import Taro from '@tarojs/taro'
 
-const API_BASE_URL = 'http://localhost:8000/api'
+// API 基础地址 - 从编译时配置中获取
+// @ts-ignore
+const API_BASE_URL = `${process.env.API_BASE_URL || 'http://localhost:8000'}/api`
 
 interface RequestOptions {
   method?: 'GET' | 'POST' | 'PUT' | 'DELETE'

@@ -1,9 +1,11 @@
 import Taro from '@tarojs/taro'
 import { IApiResponse } from '../types'
 
-// API 基础地址 - 开发环境
-// 生产环境需要修改为实际的服务器地址
-const API_BASE_URL = 'http://localhost:8000'
+// API 基础地址 - 从编译时配置中获取
+// 开发环境: http://localhost:8000
+// 生产环境: 在 config/prod.ts 中配置
+// @ts-ignore
+const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:8000'
 
 /**
  * 获取完整的图片 URL

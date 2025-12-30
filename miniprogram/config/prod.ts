@@ -3,7 +3,7 @@ export default {
     NODE_ENV: '"production"'
   },
   defineConstants: {
-    API_BASE_URL: '"https://api.yourdomain.com"'
+    'process.env.API_BASE_URL': '"https://api.yourdomain.com"'
   },
   mini: {},
   h5: {}
