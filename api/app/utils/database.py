@@ -3,9 +3,16 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import os
+from pathlib import Path
 
 # 数据库 URL 配置
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./football_events.db")
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./data/football_events.db")
+
+# 确保数据目录存在
+if DATABASE_URL.startswith("sqlite"):
+    db_path = DATABASE_URL.replace("sqlite:///", "")
+    db_dir = Path(db_path).parent
+    db_dir.mkdir(parents=True, exist_ok=True)
 
 # 创建数据库引擎
 # SQLite 需要 check_same_thread=False 以支持多线程

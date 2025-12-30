@@ -1,19 +1,17 @@
 version: '3.8'
 
 services:
-  # 后端 API 服务
   api:
-    build: ./api
+    build: .
     container_name: football-api
     ports:
-      - "${API_PORT:-8000}:8000"
+      - "8000:8000"
     volumes:
-      - ./api/football_events.db:/app/football_events.db
-      - ./api/uploads:/app/uploads
+      - ./data:/app/data              # 数据库持久化
+      - ./uploads:/app/uploads        # 上传文件持久化
     environment:
       - WECHAT_APP_ID=${WECHAT_APP_ID}
       - WECHAT_APP_SECRET=${WECHAT_APP_SECRET}
-      - API_BASE_URL=${API_BASE_URL:-http://localhost:8000}
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]

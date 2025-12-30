@@ -48,12 +48,17 @@ async def lifespan(app: FastAPI):
     init_db()
     logger.info("数据库初始化完成")
     
-    # 确保上传目录存在
+    # 确保数据和上传目录存在
+    data_dir = Path("data")
+    data_dir.mkdir(exist_ok=True)
+    logger.info("数据目录初始化完成")
+    
     upload_dir = Path("uploads")
     upload_dir.mkdir(exist_ok=True)
     (upload_dir / "events").mkdir(exist_ok=True)
     (upload_dir / "thumbnails").mkdir(exist_ok=True)
     (upload_dir / "banners").mkdir(exist_ok=True)
+    (upload_dir / "customer-service").mkdir(exist_ok=True)
     logger.info("上传目录初始化完成")
     
     yield
