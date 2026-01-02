@@ -1,11 +1,15 @@
 import Taro from '@tarojs/taro'
 import { IApiResponse } from '../types'
 
-// API 基础地址 - 从编译时配置中获取
+// API 基础地址 - 根据编译环境自动选择
 // 开发环境: http://localhost:8000
-// 生产环境: 在 config/prod.ts 中配置
-// @ts-ignore
-const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:8000'
+// 生产环境: https://www.baolifootball.cn
+// @ts-ignore - Taro 编译时会注入这个常量
+const BASE_URL = typeof API_BASE_URL !== 'undefined' 
+  ? API_BASE_URL 
+  : (process.env.NODE_ENV === 'production' 
+      ? 'https://www.baolifootball.cn' 
+      : 'http://localhost:8000')
 
 /**
  * 获取完整的图片 URL
@@ -21,16 +25,16 @@ export function getImageUrl(path: string): string {
   
   // 如果是相对路径，拼接后端地址
   if (path.startsWith('/')) {
-    return `${API_BASE_URL}${path}`
+    return `${BASE_URL}${path}`
   }
   
-  return `${API_BASE_URL}/${path}`
+  return `${BASE_URL}/${path}`
 }
 
 /**
  * 导出 API 基础地址供其他模块使用
  */
-export { API_BASE_URL }
+export { BASE_URL as API_BASE_URL }
 
 // 请求配置接口
 interface RequestConfig {
@@ -66,7 +70,7 @@ export async function request<T = any>(config: RequestConfig): Promise<T> {
   try {
     // 发起请求
     const response = await Taro.request({
-      url: `${API_BASE_URL}${url}`,
+      url: `${BASE_URL}${url}`,
       method,
       data,
       header: {

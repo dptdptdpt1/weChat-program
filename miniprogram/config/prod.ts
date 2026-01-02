@@ -3,7 +3,7 @@ export default {
     NODE_ENV: '"production"'
   },
   defineConstants: {
-    'process.env.API_BASE_URL': '"https://api.yourdomain.com"'
+    API_BASE_URL: '"https://www.baolifootball.cn"'
   },
   mini: {},
   h5: {}

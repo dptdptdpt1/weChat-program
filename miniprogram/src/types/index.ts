@@ -1,3 +1,6 @@
+// 全局常量声明
+declare const API_BASE_URL: string
+
 // API 响应基础类型
 export interface IApiResponse<T = any> {
   code: number

@@ -772,11 +772,14 @@ def setup_admin(app, engine):
         app: FastAPI 应用实例
         engine: SQLAlchemy 引擎
     """
+    # 配置 Admin，确保使用 HTTPS
     admin = Admin(
         app,
         engine,
         title="宝利足球赛事通 - 后台管理",
-        base_url="/admin"
+        base_url="/admin",
+        # 强制使用 HTTPS 加载静态资源
+        templates_dir="templates"
     )
     
     # 注册模型视图
