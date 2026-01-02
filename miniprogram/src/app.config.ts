@@ -30,5 +30,7 @@ export default defineAppConfig({
         text: '我的'
       }
     ]
-  }
+  },
+  // 启用按需注入
+  lazyCodeLoading: 'requiredComponents'
 })
